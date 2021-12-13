@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PaymentContext.Domain.Commands
+namespace PaymentContext.Shared.Commands
 {
     public class CommandResult : ICommandResult
     {
