@@ -65,7 +65,7 @@ namespace PaymentContext.Tests.Handlers
 
             handler.Handle(command);
 
-            Assert.AreEqual(false, handler.IsValid);
+            Assert.AreEqual(handler.IsValid, false);
         }
     }
 }

@@ -19,12 +19,12 @@ namespace PaymentContext.Tests.Queries
         {
             _students = new List<Student>();
 
-            for (int i = 0; i <= 9; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 _students.Add(new Student(
-                    new Name($"Nome{i.ToString()}", $"Sobrenome{i.ToString()}"),
-                    new Document($"1111111111{i.ToString()}", EDocumentType.CPF),
-                    new Email($"nome{i.ToString()}@world.com")));
+                    new Name($"Nome{i}", $"Sobrenome{i}"),
+                    new Document($"1111111111{i}", EDocumentType.CPF),
+                    new Email($"nome{i}@world.com")));
             }
         }
 
@@ -35,7 +35,7 @@ namespace PaymentContext.Tests.Queries
 
             var student = _students.AsQueryable().Where(exp).FirstOrDefault();
 
-            Assert.AreEqual(null, student);
+            Assert.AreEqual(student, null);
         }
 
         [TestMethod]
@@ -45,7 +45,7 @@ namespace PaymentContext.Tests.Queries
 
             var student = _students.AsQueryable().Where(exp).FirstOrDefault();
 
-            Assert.AreNotEqual(null, student);
+            Assert.AreNotEqual(student, null);
         }
     }
 }
